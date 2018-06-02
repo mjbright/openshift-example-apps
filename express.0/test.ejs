@@ -1,0 +1,53 @@
+#!/usr/bin/env nodejs
+
+const express = require('express')
+const app = express()
+
+// Listening port:
+const PORT=3000
+
+//------------ ROUTES ---------------------------
+
+// Add '/' as route for root:
+app.get('/', function (req, res) {
+    const addr = 'http://' + req.headers.host + req.url;
+
+    res.send('Welcome to ' + addr);
+})
+
+// Add '/ping' as route for ping/pong:
+app.get('/ping', function (req, res) {
+  res.send('Pong!')
+})
+
+//------------ 404s -----------------------------
+
+// Catch missing page errors on GET:
+app.get('*', function(req, res){
+    const addr = 'http://' + req.headers.host + req.url;
+
+    res.status(404).send('[GET] Not found - ' + addr);
+});
+
+// Catch missing page errors on PUT:
+app.put('*', function(req, res){
+    const addr = 'http://' + req.headers.host + req.url;
+
+    res.status(404).send('[PUT] Not found - ' + addr);
+});
+
+// Catch missing page errors on POST:
+app.post('*', function(req, res){
+    const addr = 'http://' + req.headers.host + req.url;
+
+    res.status(404).send('[POST] Not found - ' + addr);
+});
+
+//------------ Main -----------------------------
+// NOW listen ...
+app.listen(PORT, function () {
+  console.log('Listening on port ' + PORT)
+})
+
+
+
