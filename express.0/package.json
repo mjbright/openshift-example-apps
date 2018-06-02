@@ -1,0 +1,27 @@
+{
+  "name": "express.0",
+  "version": "0.1.0",
+  "description": "Simple Express example for testing",
+  "main": "test.ejs",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjbright/openshift-example-apps.git"
+  },
+  "keywords": [
+    "express",
+    "node.js"
+  ],
+  "author": "Michael Bright",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mjbright/openshift-example-apps/issues"
+  },
+  "homepage": "https://github.com/mjbright/openshift-example-apps#readme"
+}
