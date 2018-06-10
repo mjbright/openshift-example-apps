@@ -15,7 +15,7 @@ const PORT=8080
 app.get('/', function (req, res) {
     const addr = `http://${req.headers.host}${req.url}`;
 
-    res.send(`[From ${host}]\r\nWelcome to ${addr}`);
+    res.send(`[From ${host}]\r\nWelcome to ${addr}\r\n`);
 })
 
 // Add '/ping' as route for ping/pong:
